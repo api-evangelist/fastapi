@@ -1,57 +1,60 @@
+aid: fastapi
 name: FastAPI
 description: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
-url: https://fastapi.tiangolo.com
 type: Index
-created: 2024-01-01 00:00:00+00:00
-modified: 2024-01-01 00:00:00+00:00
-apis:
-- name: FastAPI Framework
-  description: Modern, fast web framework for building APIs with Python based on standard Python type hints
-  image: https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png
-  humanUrl: https://fastapi.tiangolo.com
-  baseUrl: https://api.example.com
-  tags:
+image: https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png
+url: https://raw.githubusercontent.com/api-evangelist/fastapi/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+tags:
   - APIs
   - Python
   - Web Framework
   - OpenAPI
+  - Swagger
   - REST
   - Async
-  properties:
+  - High Performance
+  - Type Hints
+  - Pydantic
+apis:
+  - aid: fastapi:fastapi
+    name: FastAPI Framework
+    description: Modern, fast web framework for building APIs with Python based on standard Python type hints
+    image: https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png
+    humanURL: https://fastapi.tiangolo.com
+    tags:
+      - APIs
+      - Python
+      - Web Framework
+      - OpenAPI
+      - REST
+      - Async
+    properties:
+      - type: Documentation
+        url: https://fastapi.tiangolo.com
+      - type: Getting Started
+        url: https://fastapi.tiangolo.com/tutorial/
+      - type: Change Log
+        url: https://fastapi.tiangolo.com/release-notes/
+      - type: GitHub Organization
+        url: https://github.com/tiangolo/fastapi
+common:
+  - type: Website
+    url: https://fastapi.tiangolo.com
   - type: Documentation
     url: https://fastapi.tiangolo.com
-  - type: OpenAPI
-    url: https://api.example.com/openapi.json
-  - type: Tutorial
+  - type: Getting Started
     url: https://fastapi.tiangolo.com/tutorial/
-  - type: GitHub
-    url: https://github.com/tiangolo/fastapi
-  - type: PyPI
-    url: https://pypi.org/project/fastapi/
-  - type: Discord
-    url: https://discord.gg/VQjSZaeJmf
-  - type: Twitter
-    url: https://twitter.com/fastapi
-  - type: Release Notes
+  - type: Change Log
     url: https://fastapi.tiangolo.com/release-notes/
-  contact:
   - type: Support
     url: https://fastapi.tiangolo.com/help-fastapi/
-  - type: Email
-    url: mailto:info@tiangolo.com
+  - type: GitHub Organization
+    url: https://github.com/tiangolo/fastapi
+  - type: Community
+    url: https://discord.gg/VQjSZaeJmf
 maintainers:
-- name: Sebastián Ramírez
-  twitter: tiangolo
-  github: tiangolo
-  email: info@tiangolo.com
-tags:
-- APIs
-- Python
-- Web Framework
-- OpenAPI
-- Swagger
-- REST
-- Async
-- High Performance
-- Type Hints
-- Pydantic
+  - FN: Kin Lane
+    email: kin@apievangelist.com
