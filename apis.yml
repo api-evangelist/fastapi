@@ -40,6 +40,8 @@ apis:
         url: https://fastapi.tiangolo.com/release-notes/
       - type: GitHub Organization
         url: https://github.com/tiangolo/fastapi
+      - type: JSONSchema
+        url: json-schema/fastapi-app-config.json
 common:
   - type: Website
     url: https://fastapi.tiangolo.com

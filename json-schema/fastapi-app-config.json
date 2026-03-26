@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/fastapi/json-schema/fastapi-app-config.json",
+  "title": "FastAPI Application Configuration",
+  "description": "JSON Schema for FastAPI application initialization parameters and Uvicorn server configuration. FastAPI apps are configured programmatically via the FastAPI() constructor and run with Uvicorn, which can be configured via CLI, environment variables, or a config file.",
+  "type": "object",
+  "properties": {
+    "fastapi": {
+      "type": "object",
+      "description": "FastAPI application constructor parameters",
+      "properties": {
+        "title": {
+          "type": "string",
+          "default": "FastAPI",
+          "description": "API title shown in OpenAPI docs"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Short summary of the API"
+        },
+        "description": {
+          "type": "string",
+          "description": "API description (supports Markdown)"
+        },
+        "version": {
+          "type": "string",
+          "default": "0.1.0",
+          "description": "API version"
+        },
+        "openapi_url": {
+          "type": ["string", "null"],
+          "default": "/openapi.json",
+          "description": "URL path to serve the OpenAPI schema (null to disable)"
+        },
+        "docs_url": {
+          "type": ["string", "null"],
+          "default": "/docs",
+          "description": "URL path for Swagger UI docs (null to disable)"
+        },
+        "redoc_url": {
+          "type": ["string", "null"],
+          "default": "/redoc",
+          "description": "URL path for ReDoc docs (null to disable)"
+        },
+        "openapi_tags": {
+          "type": "array",
+          "description": "Metadata for API tags used in OpenAPI",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Tag name"
+              },
+              "description": {
+                "type": "string",
+                "description": "Tag description (Markdown supported)"
+              },
+              "externalDocs": {
+                "type": "object",
+                "properties": {
+                  "description": { "type": "string" },
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        "servers": {
+          "type": "array",
+          "description": "Server URLs for OpenAPI spec",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["url"]
+          }
+        },
+        "root_path": {
+          "type": "string",
+          "default": "",
+          "description": "Root path for the application (behind a proxy)"
+        },
+        "root_path_in_servers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to include root_path in server URLs in OpenAPI"
+        },
+        "redirect_slashes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Redirect paths with trailing slashes"
+        },
+        "debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug mode"
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "Mark the entire API as deprecated in OpenAPI"
+        },
+        "contact": {
+          "type": "object",
+          "description": "API contact information for OpenAPI",
+          "properties": {
+            "name": { "type": "string" },
+            "url": { "type": "string", "format": "uri" },
+            "email": { "type": "string", "format": "email" }
+          }
+        },
+        "license_info": {
+          "type": "object",
+          "description": "API license information for OpenAPI",
+          "properties": {
+            "name": { "type": "string" },
+            "url": { "type": "string", "format": "uri" },
+            "identifier": { "type": "string" }
+          },
+          "required": ["name"]
+        },
+        "terms_of_service": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to terms of service"
+        },
+        "separate_input_output_schemas": {
+          "type": "boolean",
+          "default": true,
+          "description": "Generate separate input/output JSON schemas for models"
+        },
+        "swagger_ui_parameters": {
+          "type": "object",
+          "description": "Custom Swagger UI configuration parameters",
+          "additionalProperties": true
+        }
+      }
+    },
+    "uvicorn": {
+      "type": "object",
+      "description": "Uvicorn ASGI server configuration",
+      "properties": {
+        "host": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "Bind host"
+        },
+        "port": {
+          "type": "integer",
+          "default": 8000,
+          "description": "Bind port"
+        },
+        "workers": {
+          "type": "integer",
+          "description": "Number of worker processes"
+        },
+        "reload": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable auto-reload on code changes"
+        },
+        "reload_dirs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Directories to watch for changes"
+        },
+        "log_level": {
+          "type": "string",
+          "enum": ["critical", "error", "warning", "info", "debug", "trace"],
+          "default": "info"
+        },
+        "access_log": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable access log"
+        },
+        "proxy_headers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable X-Forwarded-* header processing"
+        },
+        "forwarded_allow_ips": {
+          "type": "string",
+          "description": "Comma-separated list of trusted proxy IPs"
+        },
+        "ssl_keyfile": {
+          "type": "string",
+          "description": "SSL key file path"
+        },
+        "ssl_certfile": {
+          "type": "string",
+          "description": "SSL certificate file path"
+        },
+        "ssl_keyfile_password": {
+          "type": "string",
+          "description": "Password for SSL key file"
+        },
+        "limit_concurrency": {
+          "type": "integer",
+          "description": "Maximum number of concurrent connections"
+        },
+        "limit_max_requests": {
+          "type": "integer",
+          "description": "Maximum requests before worker restart"
+        },
+        "timeout_keep_alive": {
+          "type": "integer",
+          "default": 5,
+          "description": "Keep-alive timeout in seconds"
+        },
+        "timeout_graceful_shutdown": {
+          "type": "integer",
+          "description": "Graceful shutdown timeout in seconds"
+        },
+        "loop": {
+          "type": "string",
+          "enum": ["auto", "asyncio", "uvloop"],
+          "default": "auto",
+          "description": "Event loop implementation"
+        },
+        "http": {
+          "type": "string",
+          "enum": ["auto", "h11", "httptools"],
+          "default": "auto",
+          "description": "HTTP protocol implementation"
+        },
+        "interface": {
+          "type": "string",
+          "enum": ["auto", "asgi3", "asgi2", "wsgi"],
+          "default": "auto"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
