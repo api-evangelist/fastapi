@@ -1,25 +1,22 @@
 aid: fastapi
 name: FastAPI
-description: FastAPI is a modern, fast (high-performance), web framework for 
-  building APIs with Python 3.7+ based on standard Python type hints.
+description: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
 type: Index
 image: https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png
-url: 
-  https://raw.githubusercontent.com/api-evangelist/fastapi/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/fastapi/refs/heads/main/apis.yml
 created: '2024-01-01'
 modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
-  - APIs
-  - Python
-  - Web Framework
-  - OpenAPI
-  - Swagger
-  - REST
   - Async
   - High Performance
-  - Type Hints
+  - OpenAPI
   - Pydantic
+  - Python
+  - REST
+  - Swagger
+  - Type Hints
+  - Web Framework
 apis:
   - aid: fastapi:fastapi
     name: FastAPI Framework
@@ -29,12 +26,11 @@ apis:
     image: https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png
     humanURL: https://fastapi.tiangolo.com
     tags:
-      - APIs
-      - Python
-      - Web Framework
-      - OpenAPI
-      - REST
       - Async
+      - OpenAPI
+      - Python
+      - REST
+      - Web Framework
     properties:
       - type: Documentation
         url: https://fastapi.tiangolo.com
