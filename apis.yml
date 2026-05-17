@@ -34,11 +34,11 @@ apis:
     properties:
       - type: Documentation
         url: https://fastapi.tiangolo.com
-      - type: Getting Started
+      - type: GettingStarted
         url: https://fastapi.tiangolo.com/tutorial/
-      - type: Change Log
+      - type: ChangeLog
         url: https://fastapi.tiangolo.com/release-notes/
-      - type: GitHub Organization
+      - type: GitHubOrganization
         url: https://github.com/tiangolo/fastapi
       - type: JSONSchema
         url: json-schema/fastapi-app-config.json
@@ -47,13 +47,13 @@ common:
     url: https://fastapi.tiangolo.com
   - type: Documentation
     url: https://fastapi.tiangolo.com
-  - type: Getting Started
+  - type: GettingStarted
     url: https://fastapi.tiangolo.com/tutorial/
-  - type: Change Log
+  - type: ChangeLog
     url: https://fastapi.tiangolo.com/release-notes/
   - type: Support
     url: https://fastapi.tiangolo.com/help-fastapi/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/tiangolo/fastapi
   - type: Community
     url: https://discord.gg/VQjSZaeJmf
