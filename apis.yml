@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/fastapi-app-config.json
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/fastapi
   - type: Website
     url: https://fastapi.tiangolo.com
   - type: Documentation
