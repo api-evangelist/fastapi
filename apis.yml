@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/fastapi-app-config.json
 common:
+  - type: DomainSecurity
+    url: security/fastapi-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/fastapi
   - type: Website
